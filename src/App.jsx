@@ -7,6 +7,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import NavbarOffCanvas from './components/NavBarOffCanvas';
 import Home from './pages/Home';
 import JaunProfile from './pages/JaunProfile';
+import ChevonneProfile from './pages/ChevonneProfile';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -16,7 +17,8 @@ function App() {
       <NavbarOffCanvas />
       <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/jaun" element={<JaunProfile />} />
+        <Route path="/jaun-profile" element={<JaunProfile />} />
+        <Route path="/chevonne-profile" element={<ChevonneProfile />} />
       </Routes>
       </Router>
   );

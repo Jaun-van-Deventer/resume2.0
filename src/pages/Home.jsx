@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import jaunImage from "../assets/jaun.jpg";
 import chevonneImage from "../assets/chevonne.jpg";
 
@@ -8,7 +9,7 @@ function Home() {
 
   return (
     <div className="home-container">
-      {/* Left Half */}
+      {/* Left Half - Jaun's Profile */}
       <div
         className={`half left-half ${hoveredHalf === 'left' ? 'focused' : 'blurred'}`}
         onMouseEnter={() => setHoveredHalf('left')}
@@ -17,13 +18,15 @@ function Home() {
         <div className="content">
           <img src={jaunImage} alt="Jaun" className="profile-photo" />
           <h1><strong>Jaun van Deventer</strong></h1>
-          <p><strong>Graduate Developers</strong></p>
+          <p><strong>Graduate Developer</strong></p>
           <p>Tech Stack: React, Angular, MongoDB</p>
-          <p>Click here to learn more!</p>
+          <Link to="/jaun-profile" className="link-style">
+            <p>Click here to learn more!</p>
+          </Link>
         </div>
       </div>
 
-      {/* Right Half */}
+      {/* Right Half - Chevonne's Profile */}
       <div
         className={`half right-half ${hoveredHalf === 'right' ? 'focused' : 'blurred'}`}
         onMouseEnter={() => setHoveredHalf('right')}
@@ -32,9 +35,11 @@ function Home() {
         <div className="content">
           <img src={chevonneImage} alt="Chevonne" className="profile-photo" />
           <h1><strong>Chevonne Serfontein</strong></h1>
-          <p><strong>Graduate Developer<strong/></strong></p>
+          <p><strong>Graduate Developer</strong></p>
           <p>Tech Stack: C#, React, DynamoDB</p>
-          <p>Click here to learn more!</p>
+          <Link to="/chevonne-profile" className="link-style">
+            <p>Click here to learn more!</p>
+          </Link>
         </div>
       </div>
     </div>
