@@ -1,13 +1,18 @@
 import React from "react"
-import bootstrapBundleMin from "bootstrap/dist/js/bootstrap.bundle.min"
-import { popper } from "@popperjs/core"
+import { useLocation } from "react-router-dom";
 
 function NavbarOffCanvas() {
+  const loc = useLocation();
+  const pageNames = {
+    '/': 'Home',
+  };
+  const currPage = pageNames[location.pathname] || 'Page';
+
   return (
     <nav className="navbar navbar-dark bg-dark fixed-top">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          Offcanvas Dark Navbar
+          {currPage}
         </a>
         <button
           className="navbar-toggler"
