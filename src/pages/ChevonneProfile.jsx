@@ -1,6 +1,6 @@
 import React from "react";
 
-function JaunProfile () {
+function ChevonneProfile () {
     return (
         <div>
                 <h1>About Page</h1>
@@ -9,4 +9,4 @@ function JaunProfile () {
     )
 }
 
-export default JaunProfile;
+export default ChevonneProfile;
