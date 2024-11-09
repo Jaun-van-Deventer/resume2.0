@@ -8,19 +8,22 @@ import NavbarOffCanvas from './components/NavBarOffCanvas';
 import Home from './pages/Home';
 import JaunProfile from './pages/JaunProfile';
 import ChevonneProfile from './pages/ChevonneProfile';
+import { MenuProvider } from './components/MenuContext';
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
+    <MenuProvider>
       <Router>
-      <NavbarOffCanvas />
+        <NavbarOffCanvas />
       <Routes>
-      <Route path="/" element={<Home />} />
-        <Route path="/jaun-profile" element={<JaunProfile />} />
-        <Route path="/chevonne-profile" element={<ChevonneProfile />} />
-      </Routes>
+        <Route path="/" element={<Home />} />
+          <Route path="/jaun" element={<JaunProfile />} />
+          <Route path="/chevonne" element={<ChevonneProfile />} />
+        </Routes>
       </Router>
+    </MenuProvider>
   );
 }
 

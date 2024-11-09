@@ -1,21 +1,17 @@
 import React from "react"
 import { useLocation, Link } from "react-router-dom";
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import { useMenu } from "./MenuContext";
 
 function NavbarOffCanvas() {
-  const loc = useLocation();
-  const pageNames = {
-    '/': 'Home',
-    '/jaun': 'Jaun',
-    '/chevonne': 'Chevonne',
-  };
-  const currPage = pageNames[location.pathname] || 'Page';
+
+    const { menuTitle, menuItems } = useMenu();
 
   return (
     <nav className="navbar navbar-dark bg-dark fixed-top">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          {currPage}
+          {menuTitle}
         </a>
         <button
           className="navbar-toggler"
@@ -35,7 +31,7 @@ function NavbarOffCanvas() {
         >
           <div className="offcanvas-header">
             <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">
-              {currPage}
+              {menuTitle}
             </h5>
             <button
               type="button"
@@ -45,48 +41,14 @@ function NavbarOffCanvas() {
             ></button>
           </div>
           <div className="offcanvas-body d-flex flex-column">
-            <ul className="navbar-nav flex-grow-1 ">
-              <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/" >
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/jaun">
-                  Link
-                </Link>
-              </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Dropdown
-                </a>
-                <ul className="dropdown-menu dropdown-menu-dark">
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Action
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Another action
-                    </a>
-                  </li>
-                  <li>
-                    <hr className="dropdown-divider" />
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Something else here
-                    </a>
-                  </li>
-                </ul>
-              </li>
+          <ul className="navbar-nav flex-grow-1">
+              {menuItems.map((item, index) => (
+                <li key={index} className="nav-item">
+                  <Link className="nav-link" to={item.link}>
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
             <div>
               <a href="https://linkedin.com" className="" target="_blank" rel="noopener noreferrer">

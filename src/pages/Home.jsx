@@ -1,11 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import jaunImage from "../assets/jaun.jpg";
 import chevonneImage from "../assets/chevonne.jpg";
+import { useMenu } from "../components/MenuContext";
 
 function Home() {
+  const { setMenuTitle, setMenuItems } = useMenu();
   // State to track which half the cursor is hovering over
   const [hoveredHalf, setHoveredHalf] = useState(null);
+
+  useEffect(() => {
+    setMenuTitle('Home');
+    setMenuItems([
+      { label: 'Home', link: '/' },
+      { label: 'Jaun', link: 'Jaun' },
+      { label: 'Chevonne', link: 'Chevonne' },
+    ]);
+  }, [setMenuTitle, setMenuItems]);
 
   return (
     <div className="home-container">
@@ -20,8 +31,8 @@ function Home() {
           <h1><strong>Jaun van Deventer</strong></h1>
           <p><strong>Graduate Developer</strong></p>
           <p>Tech Stack: React, Angular, MongoDB</p>
-          <Link to="/jaun-profile" className="link-style">
-          <button type="button" class="btn btn-light">Click here to learn more</button>
+          <Link to="/jaun" className="link-style">
+          <button type="button" className="btn btn-light">Click here to learn more</button>
           </Link>
         </div>
       </div>
@@ -37,8 +48,8 @@ function Home() {
           <h1><strong>Chevonne Serfontein</strong></h1>
           <p><strong>Graduate Developer</strong></p>
           <p>Tech Stack: C#, React, DynamoDB</p>
-          <Link to="/chevonne-profile" className="link-style">
-          <button type="button" class="btn btn-light">Click here to learn more</button>
+          <Link to="/chevonne" className="link-style">
+          <button type="button" className="btn btn-light">Click here to learn more</button>
           </Link>
         </div>
       </div>
