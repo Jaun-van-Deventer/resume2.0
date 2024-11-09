@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Home(){
     // State to track which half the cursor is hovering over
@@ -13,10 +14,12 @@ function Home(){
           onMouseEnter={() => setHoveredHalf('left')}
           onMouseLeave={() => setHoveredHalf(null)}
         >
-          <div className="content">
+          <Link to="/jaun" >
+          <div className="content, link-no-underline"  style={{ textDecoration: 'none', color: 'white' }}>
             <h1>Welcome to My Resume</h1>
             <p>About me, skills, and more...</p>
           </div>
+          </Link>
         </div>
   
         {/* Right Half */}

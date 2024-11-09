@@ -1,11 +1,13 @@
 import React from "react"
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function NavbarOffCanvas() {
   const loc = useLocation();
   const pageNames = {
     '/': 'Home',
-    '/About': 'Abbout',
+    '/jaun': 'Jaun',
+    '/chevonne': 'Chevonne',
   };
   const currPage = pageNames[location.pathname] || 'Page';
 
@@ -33,7 +35,7 @@ function NavbarOffCanvas() {
         >
           <div className="offcanvas-header">
             <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">
-              Dark Offcanvas
+              {currPage}
             </h5>
             <button
               type="button"
@@ -42,17 +44,17 @@ function NavbarOffCanvas() {
               aria-label="Close"
             ></button>
           </div>
-          <div className="offcanvas-body">
-            <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <div className="offcanvas-body d-flex flex-column">
+            <ul className="navbar-nav flex-grow-1 ">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+                <Link className="nav-link active" aria-current="page" to="/" >
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to="/jaun">
                   Link
-                </a>
+                </Link>
               </li>
               <li className="nav-item dropdown">
                 <a
@@ -86,6 +88,14 @@ function NavbarOffCanvas() {
                 </ul>
               </li>
             </ul>
+            <div>
+              <a href="https://linkedin.com" className="" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-linkedin fa-4x" style={{color: "#0743ab",}}>&nbsp;</i>
+              </a>
+              <a href="https://linkedin.com" className="text-info" target="_blank" rel="noopener noreferrer">
+                <i className="fa-brands fa-square-github fa-4x" style={{color: "#fff",}}>&nbsp;</i>
+              </a>
+            </div>
           </div>
         </div>
       </div>
