@@ -40,3 +40,71 @@
 .read-the-docs {
   color: #888;
 }
+/* Basic styling for the whole page */
+.home-container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Styling for each half of the page */
+.half {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Left half - Light gray background */
+.left-half {
+  background-color: #f0f0f0;
+}
+
+/* Right half - White background */
+.right-half {
+  background-color: #ffffff;
+}
+
+/* Content styling for both halves */
+.content {
+  text-align: center;
+  padding: 20px;
+  z-index: 1;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Blur effect for both halves */
+.blurred {
+  filter: blur(5px);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Focus effect when hovering over the section */
+.focused {
+  filter: blur(0);
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Optional: Style the logos at the top */
+.logo {
+  height: 40px;
+  margin: 0 10px;
+}
+
+.react {
+  background: #61dafb;
+}
+
