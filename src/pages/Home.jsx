@@ -5,7 +5,7 @@ import chevonneImage from "../assets/chevonne.jpg";
 import { useMenu } from "../components/MenuContext";
 
 function Home() {
-  const { setMenuTitle, setMenuItems } = useMenu();
+  const { setMenuTitle, setMenuItems, setMenuSocial } = useMenu();
   // State to track which half the cursor is hovering over
   const [hoveredHalf, setHoveredHalf] = useState(null);
 
@@ -16,7 +16,11 @@ function Home() {
       { label: 'Jaun', link: 'Jaun' },
       { label: 'Chevonne', link: 'Chevonne' },
     ]);
-  }, [setMenuTitle, setMenuItems]);
+    setMenuSocial({
+      linkedin: "/",
+      github: "/"
+  });
+}, [setMenuTitle, setMenuItems, setMenuSocial]);
 
   return (
     <div className="home-container">
@@ -30,7 +34,7 @@ function Home() {
           <img src={jaunImage} alt="Jaun" className="profile-photo" />
           <h1><strong>Jaun van Deventer</strong></h1>
           <p><strong>Graduate Developer</strong></p>
-          <p>Tech Stack: React, Angular, MongoDB</p>
+          <p>Tech Stack: JavaScript, React, MongoDB</p>
           <Link to="/jaun" className="link-style">
           <button type="button" className="btn btn-light">Click here to learn more</button>
           </Link>

@@ -8,6 +8,8 @@ import NavbarOffCanvas from './components/NavBarOffCanvas';
 import Home from './pages/Home';
 import JaunProfile from './pages/JaunProfile';
 import ChevonneProfile from './pages/ChevonneProfile';
+import JaunCertificates from './pages/JaunCertificates'
+import JaunProjects from './pages/JaunProjects';
 import { MenuProvider } from './components/MenuContext';
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
           <Route path="/jaun" element={<JaunProfile />} />
+          <Route path="/jauncert" element={<JaunCertificates />} />
+          <Route path="/jaunprojects" element={<JaunProjects />} />
           <Route path="/chevonne" element={<ChevonneProfile />} />
         </Routes>
       </Router>

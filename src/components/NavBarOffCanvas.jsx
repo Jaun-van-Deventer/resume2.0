@@ -5,7 +5,7 @@ import { useMenu } from "./MenuContext";
 
 function NavbarOffCanvas() {
 
-    const { menuTitle, menuItems } = useMenu();
+    const { menuTitle, menuItems, menuSocial } = useMenu();
 
   return (
     <nav className="navbar navbar-dark bg-dark fixed-top">
@@ -51,10 +51,10 @@ function NavbarOffCanvas() {
               ))}
             </ul>
             <div>
-              <a href="https://linkedin.com" className="" target="_blank" rel="noopener noreferrer">
+              <a href={menuSocial.linkedin} className="" target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-linkedin fa-4x" style={{color: "#0743ab",}}>&nbsp;</i>
               </a>
-              <a href="https://linkedin.com" className="text-info" target="_blank" rel="noopener noreferrer">
+              <a href={menuSocial.github} className="text-info" target="_blank" rel="noopener noreferrer">
                 <i className="fa-brands fa-square-github fa-4x" style={{color: "#fff",}}>&nbsp;</i>
               </a>
             </div>

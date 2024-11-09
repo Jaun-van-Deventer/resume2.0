@@ -3,7 +3,7 @@ import { useMenu } from "../components/MenuContext";
 
 function ChevonneProfile () {
 
-    const { setMenuTitle, setMenuItems } = useMenu();
+    const { setMenuTitle, setMenuItems, setMenuSocial } = useMenu();
 
     useEffect(() => {
         setMenuTitle('Chevonne');
@@ -12,7 +12,11 @@ function ChevonneProfile () {
             { label: 'Certificates', link: '/' },
             { label: 'About Me', link: '/' },
         ]);
-        }, [setMenuTitle, setMenuItems]);
+        setMenuSocial({
+            linkedin: "https://www.linkedin.com/in/chevonne-serfontein/",
+            github: "https://github.com/ChevonneSerfontein2020"
+        });
+    }, [setMenuTitle, setMenuItems, setMenuSocial]);
 
     return (
         <div>
