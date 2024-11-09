@@ -15,13 +15,13 @@ function Home() {
         onMouseEnter={() => setHoveredHalf('left')}
         onMouseLeave={() => setHoveredHalf(null)}
       >
-        <div className="content">
+        <div className="content text-light">
           <img src={jaunImage} alt="Jaun" className="profile-photo" />
           <h1><strong>Jaun van Deventer</strong></h1>
           <p><strong>Graduate Developer</strong></p>
           <p>Tech Stack: React, Angular, MongoDB</p>
           <Link to="/jaun-profile" className="link-style">
-            <p>Click here to learn more!</p>
+          <button type="button" class="btn btn-light">Click here to learn more</button>
           </Link>
         </div>
       </div>
@@ -32,13 +32,13 @@ function Home() {
         onMouseEnter={() => setHoveredHalf('right')}
         onMouseLeave={() => setHoveredHalf(null)}
       >
-        <div className="content">
+        <div className="content text-light">
           <img src={chevonneImage} alt="Chevonne" className="profile-photo" />
           <h1><strong>Chevonne Serfontein</strong></h1>
           <p><strong>Graduate Developer</strong></p>
           <p>Tech Stack: C#, React, DynamoDB</p>
           <Link to="/chevonne-profile" className="link-style">
-            <p>Click here to learn more!</p>
+          <button type="button" class="btn btn-light">Click here to learn more</button>
           </Link>
         </div>
       </div>
