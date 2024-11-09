@@ -5,6 +5,7 @@ function NavbarOffCanvas() {
   const loc = useLocation();
   const pageNames = {
     '/': 'Home',
+    '/About': 'Abbout',
   };
   const currPage = pageNames[location.pathname] || 'Page';
 
