@@ -1,16 +1,18 @@
 import React, { useEffect, useRef } from "react";
 import { useMenu } from "../components/MenuContext";
-import "../styles/jaunProjects.css";
+import { Link } from "react-router-dom";
+import Flickity from 'flickity';
+import 'flickity/css/flickity.css';
+import '../styles/JaunProjects.scss';
+import resumeGameImage from '../assets/resume-game.png';
+import invenManager from '../assets/inven-man.png';
+import movieBrowser from '../assets/movie-browser.png';
+import guessNum from '../assets/guess-num.png';
+import pigGame from '../assets/pig-game.png';
 
 function JaunProjects() {
     const { setMenuTitle, setMenuItems, setMenuSocial } = useMenu();
-    const dragContainerRef = useRef(null);
-    const spinContainerRef = useRef(null);
-    let radius = 240;
-    const autoRotate = true;
-    const rotateSpeed = -60;
-    const imgWidth = 120;
-    const imgHeight = 170;
+    const carouselRef = useRef(null);
 
     useEffect(() => {
         setMenuTitle('Jaun');
@@ -27,90 +29,88 @@ function JaunProjects() {
     }, [setMenuTitle, setMenuItems, setMenuSocial]);
 
     useEffect(() => {
-        const odrag = dragContainerRef.current;
-        const ospin = spinContainerRef.current;
-        const aImg = ospin.getElementsByTagName('img');
-
-        ospin.style.width = `${imgWidth}px`;
-        ospin.style.height = `${imgHeight}px`;
-
-        const ground = document.getElementById('ground');
-        ground.style.width = `${radius * 3}px`;
-        ground.style.height = `${radius * 3}px`;
-
-        function init(delayTime) {
-            for (let i = 0; i < aImg.length; i++) {
-                aImg[i].style.transform = `rotateY(${i * (360 / aImg.length)}deg) translateZ(${radius}px)`;
-                aImg[i].style.transition = "transform 1s";
-                aImg[i].style.transitionDelay = delayTime || `${(aImg.length - i) / 4}s`;
+        const options = {
+            accessibility: true,
+            prevNextButtons: true,
+            pageDots: true,
+            setGallerySize: false,
+            arrowShape: {
+                x0: 10,
+                x1: 60,
+                y1: 50,
+                x2: 60,
+                y2: 45,
+                x3: 15
             }
-        }
-
-        let tX = 0, tY = 10, desX = 0, desY = 0;
-        const applyTransform = () => {
-            if (tY > 180) tY = 180;
-            if (tY < 0) tY = 0;
-            odrag.style.transform = `rotateX(${-tY}deg) rotateY(${tX}deg)`;
         };
 
-        if (autoRotate) {
-            ospin.style.animation = `${rotateSpeed > 0 ? 'spin' : 'spinRevert'} ${Math.abs(rotateSpeed)}s infinite linear`;
-        }
+        const flkty = new Flickity(carouselRef.current, options);
 
-        const pointerDownHandler = (e) => {
-            e.preventDefault();
-            const sX = e.clientX;
-            const sY = e.clientY;
-
-            const pointerMoveHandler = (e) => {
-                const nX = e.clientX;
-                const nY = e.clientY;
-                desX = nX - sX;
-                desY = nY - sY;
-                tX += desX * 0.1;
-                tY += desY * 0.1;
-                applyTransform();
-            };
-
-            const pointerUpHandler = () => {
-                document.removeEventListener("pointermove", pointerMoveHandler);
-                document.removeEventListener("pointerup", pointerUpHandler);
-            };
-
-            document.addEventListener("pointermove", pointerMoveHandler);
-            document.addEventListener("pointerup", pointerUpHandler);
-        };
-
-        odrag.addEventListener("pointerdown", pointerDownHandler);
-        document.addEventListener("wheel", (e) => {
-            const d = e.deltaY / 20;
-            radius += d;
-            init(1);
+        // Parallax scroll effect for each slide
+        flkty.on('scroll', () => {
+            const slides = carouselRef.current.getElementsByClassName('carousel-cell');
+            flkty.slides.forEach((slide, i) => {
+                const image = slides[i];
+                const x = (slide.target + flkty.x) * -1 / 3;
+                image.style.backgroundPosition = `${x}px`;
+            });
         });
 
-        init(1000);
-
-        return () => {
-            odrag.removeEventListener("pointerdown", pointerDownHandler);
-            document.removeEventListener("wheel", init);
-        };
+        return () => flkty.destroy(); // Cleanup on unmount
     }, []);
 
     return (
-        <div ref={dragContainerRef} id="drag-container">
-            <div ref={spinContainerRef} id="spin-container">
-                {[
-                    "/src/assets/guess-num.png",
-                    "/src/assets/pig-game.png",
-                    "/src/assets/resume.png",
-                    "https://images.pexels.com/photos/1758144/pexels-photo-1758144.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-                    "https://images.pexels.com/photos/1382734/pexels-photo-1382734.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-                ].map((src, index) => (
-                    <img key={index} src={src} alt="" />
-                ))}
-                <p>My Projects</p>
+        <div className="hero-slider" ref={carouselRef} data-carousel>
+            <div className="carousel-cell" style={{ backgroundImage: `url(${resumeGameImage})` }}>
+                <div className="overlay"></div>
+                <div className="inner">
+                    <h3 className="subtitle">Resume Game</h3>
+                    <h3 className="">Gamified way to explore my resume using Kaboom.js and Vite</h3>
+                    <a href="https://flickity.metafizzy.co/" target="_blank" rel="noopener noreferrer" className="btn">Tell me more</a>
+                </div>
             </div>
-            <div id="ground"></div>
+            <div className="carousel-cell" style={{ backgroundImage: `url(${invenManager})` }}>
+                <div className="overlay"></div>
+                <div className="inner">
+                    <h3 className="subtitle">Inventory Manager</h3>
+                    <h3 className="">Inventory management system using React, Node and MongoDB</h3>
+                    <a href="https://flickity.metafizzy.co/" target="_blank" rel="noopener noreferrer" className="btn">Tell me more</a>
+                </div>
+            </div>
+            <div className="carousel-cell" style={{ backgroundImage: `url(${movieBrowser})` }}>
+                <div className="overlay"></div>
+                <div className="inner">
+                    <h3 className="subtitle">Movie Browser</h3>
+                    <h3 className="">An unfinished movie browser that lets you search for any movie using React, API implementation needs to be finished</h3>
+                    <a href="https://flickity.metafizzy.co/" target="_blank" rel="noopener noreferrer" className="btn">Tell me more</a>
+                </div>
+            </div>
+            <div className="carousel-cell" style={{ backgroundImage: `url(${guessNum})` }}>
+                <div className="overlay"></div>
+                <div className="inner">
+                    <h3 className="subtitle">Guess My Number</h3>
+                    <h3 className="">A simple guess my number game using JavaScript,HTML and CSS</h3>
+                    <a href="https://flickity.metafizzy.co/" target="_blank" rel="noopener noreferrer" className="btn">Tell me more</a>
+                </div>
+            </div>
+            <div className="carousel-cell" style={{ backgroundImage: `url(${pigGame})` }}>
+                <div className="overlay"></div>
+                <div className="inner">
+                    <h3 className="subtitle">Pig Game</h3>
+                    <h3 className="">Another simple Javascript game with HTML and CSS, the first player to 100 wins, but if you roll a 1 you lose all current points, you can hold on to your points by pressing the hold button</h3>
+                    <a href="https://flickity.metafizzy.co/" target="_blank" rel="noopener noreferrer" className="btn">Tell me more</a>
+                </div>
+            </div>
+            <div className="carousel-cell" style={{ backgroundImage: 'url(https://68.media.tumblr.com/3beb13a4167aa8b5c4743eac17bf351c/tumblr_o8nyvtiHfC1slhhf0o1_1280.jpg)' }}>
+                <div className="overlay"></div>
+                <div className="inner">
+                    <h3 className="subtitle">Slide 6</h3>
+                    <h2 className="title">Flickity Parallax</h2>
+                    <Link to="/">
+                    <a href="https://flickity.metafizzy.co/" target="_blank" rel="noopener noreferrer" className="btn">Tell me more</a>
+                    </Link>
+                </div>
+            </div>
         </div>
     );
 }
