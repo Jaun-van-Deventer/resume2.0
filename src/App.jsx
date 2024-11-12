@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { BrowserRouter as Router,Route, Routes  } from 'react-router-dom';
+import { BrowserRouter } from "react-router-dom";
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -17,8 +18,8 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <MenuProvider>
-      <Router>
+      <MenuProvider>
+      <Router basename="/resume2.0">
         <NavbarOffCanvas />
       <Routes>
         <Route path="/" element={<Home />} />
