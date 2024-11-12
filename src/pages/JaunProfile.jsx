@@ -11,7 +11,7 @@ function JaunProfile () {
             { label: 'Home', link: '/' },
             { label: 'Certificates', link: '/jauncert' },
             { label: 'Projects', link: '/jaunprojects' },
-            { label: 'About Me', link: '/' },
+            { label: 'About Me', link: '/jaunresume' },
         ]);
         setMenuSocial({
             linkedin: "https://www.linkedin.com/in/jaun-van-deventer-51314628a/",

@@ -3,16 +3,21 @@ import { useMenu } from "../components/MenuContext";
 
 function JaunProfile () {
     
-    const { setMenuTitle, setMenuItems } = useMenu();
+    const { setMenuTitle, setMenuItems, setMenuSocial } = useMenu();
 
     useEffect(() => {
         setMenuTitle('Jaun');
         setMenuItems([
             { label: 'Home', link: '/' },
             { label: 'Profile', link: '/jaun' },
+            { label: 'Projects', link: '/jaunprojects' },
             { label: 'About Me', link: '/' },
         ]);
-        }, [setMenuTitle, setMenuItems]);
+        setMenuSocial({
+            linkedin: "https://www.linkedin.com/in/jaun-van-deventer-51314628a/",
+            github: "https://github.com/Jaun-van-Deventer"
+        });
+        }, [setMenuTitle, setMenuItems, setMenuSocial]);
 
     return (
         <div className="cert-container">

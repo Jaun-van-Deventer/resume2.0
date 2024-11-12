@@ -9,6 +9,7 @@ import invenManager from '../assets/inven-man.png';
 import movieBrowser from '../assets/movie-browser.png';
 import guessNum from '../assets/guess-num.png';
 import pigGame from '../assets/pig-game.png';
+import quicklink from '../assets/quicklink.png'
 
 function JaunProjects() {
     const { setMenuTitle, setMenuItems, setMenuSocial } = useMenu();
@@ -19,7 +20,7 @@ function JaunProjects() {
         setMenuItems([
             { label: 'Home', link: '/' },
             { label: 'Certificates', link: '/jauncert' },
-            { label: 'Profile', link: 'Jaun' },
+            { label: 'Profile', link: '/Jaun' },
             { label: 'About Me', link: '/' },
         ]);
         setMenuSocial({
@@ -69,6 +70,14 @@ function JaunProjects() {
                     <a href="https://flickity.metafizzy.co/" target="_blank" rel="noopener noreferrer" className="btn">Tell me more</a>
                 </div>
             </div>
+            <div className="carousel-cell" style={{ backgroundImage: `url(${quicklink})` }}>
+                <div className="overlay"></div>
+                <div className="inner">
+                    <h3 className="subtitle">Quicklink-QR</h3>
+                    <h3 className="">An extension that I made to turn any link into a scannable and shareable QR code</h3>
+                    <a href="https://github.com/Jaun-van-Deventer/Quicklink-QR" target="_blank" rel="noopener noreferrer" className="btn">Tell me more</a>
+                </div>
+            </div>
             <div className="carousel-cell" style={{ backgroundImage: `url(${invenManager})` }}>
                 <div className="overlay"></div>
                 <div className="inner">
@@ -82,7 +91,7 @@ function JaunProjects() {
                 <div className="inner">
                     <h3 className="subtitle">Movie Browser</h3>
                     <h3 className="">An unfinished movie browser that lets you search for any movie using React, API implementation needs to be finished</h3>
-                    <a href="https://flickity.metafizzy.co/" target="_blank" rel="noopener noreferrer" className="btn">Tell me more</a>
+                    <a href="https://jaun-van-deventer.github.io/react-movie-database/" target="_blank" rel="noopener noreferrer" className="btn">Tell me more</a>
                 </div>
             </div>
             <div className="carousel-cell" style={{ backgroundImage: `url(${guessNum})` }}>
@@ -90,7 +99,7 @@ function JaunProjects() {
                 <div className="inner">
                     <h3 className="subtitle">Guess My Number</h3>
                     <h3 className="">A simple guess my number game using JavaScript,HTML and CSS</h3>
-                    <a href="https://flickity.metafizzy.co/" target="_blank" rel="noopener noreferrer" className="btn">Tell me more</a>
+                    <a href="https://jaun-van-deventer.github.io/guess-my-number/" target="_blank" rel="noopener noreferrer" className="btn">Tell me more</a>
                 </div>
             </div>
             <div className="carousel-cell" style={{ backgroundImage: `url(${pigGame})` }}>
@@ -99,16 +108,6 @@ function JaunProjects() {
                     <h3 className="subtitle">Pig Game</h3>
                     <h3 className="">Another simple Javascript game with HTML and CSS, the first player to 100 wins, but if you roll a 1 you lose all current points, you can hold on to your points by pressing the hold button</h3>
                     <a href="https://flickity.metafizzy.co/" target="_blank" rel="noopener noreferrer" className="btn">Tell me more</a>
-                </div>
-            </div>
-            <div className="carousel-cell" style={{ backgroundImage: 'url(https://68.media.tumblr.com/3beb13a4167aa8b5c4743eac17bf351c/tumblr_o8nyvtiHfC1slhhf0o1_1280.jpg)' }}>
-                <div className="overlay"></div>
-                <div className="inner">
-                    <h3 className="subtitle">Slide 6</h3>
-                    <h2 className="title">Flickity Parallax</h2>
-                    <Link to="/">
-                    <a href="https://flickity.metafizzy.co/" target="_blank" rel="noopener noreferrer" className="btn">Tell me more</a>
-                    </Link>
                 </div>
             </div>
         </div>

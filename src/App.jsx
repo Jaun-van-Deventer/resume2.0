@@ -10,6 +10,7 @@ import JaunProfile from './pages/JaunProfile';
 import ChevonneProfile from './pages/ChevonneProfile';
 import JaunCertificates from './pages/JaunCertificates'
 import JaunProjects from './pages/JaunProjects';
+import JaunResume from './pages/JaunResume'
 import { MenuProvider } from './components/MenuContext';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path="/jaun" element={<JaunProfile />} />
           <Route path="/jauncert" element={<JaunCertificates />} />
           <Route path="/jaunprojects" element={<JaunProjects />} />
+          <Route path="/jaunresume" element={<JaunResume />} />
           <Route path="/chevonne" element={<ChevonneProfile />} />
         </Routes>
       </Router>
