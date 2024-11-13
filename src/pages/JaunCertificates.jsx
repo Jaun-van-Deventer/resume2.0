@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import { useMenu } from "../components/MenuContext";
+import jcert from "/assets/jcert.png"
+import jcert2 from "/assets/jcert2.png"
 
 function JaunProfile () {
     
@@ -11,7 +13,7 @@ function JaunProfile () {
             { label: 'Home', link: '/' },
             { label: 'Profile', link: '/jaun' },
             { label: 'Projects', link: '/jaunprojects' },
-            { label: 'About Me', link: '/' },
+            { label: 'About Me', link: '/jaunresume' },
         ]);
         setMenuSocial({
             linkedin: "https://www.linkedin.com/in/jaun-van-deventer-51314628a/",
@@ -21,8 +23,8 @@ function JaunProfile () {
 
     return (
         <div className="cert-container">
-                <img src="./src/assets/jcert.png" alt="Harvard CS50"  /> &nbsp;
-                <img src="./src/assets/jcert2.png" alt="Upskillist CS" />
+                <img src={jcert} alt="Harvard CS50"  /> &nbsp;
+                <img src={jcert2} alt="Upskillist CS" />
         </div>
     )
 }
