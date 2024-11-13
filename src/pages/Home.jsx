@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import jaunImage from "../assets/jaun.jpg";
-import chevonneImage from "../assets/chevonne.jpg";
+import jaunImage from "/assets/jaun.jpg";
+import chevonneImage from "/assets/chevonne.jpg";
 import { useMenu } from "../components/MenuContext";
 
 function Home() {

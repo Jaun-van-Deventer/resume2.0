@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 import Flickity from 'flickity';
 import 'flickity/css/flickity.css';
 import '../styles/JaunProjects.scss';
-import resumeGameImage from '../assets/resume-game.png';
-import invenManager from '../assets/inven-man.png';
-import movieBrowser from '../assets/movie-browser.png';
-import guessNum from '../assets/guess-num.png';
-import pigGame from '../assets/pig-game.png';
-import quicklink from '../assets/quicklink.png'
+import resumeGameImage from '/assets/resume-game.png';
+import invenManager from '/assets/inven-man.png';
+import movieBrowser from '/assets/movie-browser.png';
+import guessNum from '/assets/guess-num.png';
+import pigGame from '/assets/pig-game.png';
+import quicklink from '/assets/quicklink.png'
 
 function JaunProjects() {
     const { setMenuTitle, setMenuItems, setMenuSocial } = useMenu();
@@ -67,7 +67,7 @@ function JaunProjects() {
                 <div className="inner">
                     <h3 className="subtitle">Resume Game</h3>
                     <h3 className="">Gamified way to explore my resume using Kaboom.js and Vite</h3>
-                    <a href="https://flickity.metafizzy.co/" target="_blank" rel="noopener noreferrer" className="btn">Tell me more</a>
+                    <a href="https://jaun-van-deventer.github.io/resume_game/" target="_blank" rel="noopener noreferrer" className="btn">Tell me more</a>
                 </div>
             </div>
             <div className="carousel-cell" style={{ backgroundImage: `url(${quicklink})` }}>
@@ -83,7 +83,7 @@ function JaunProjects() {
                 <div className="inner">
                     <h3 className="subtitle">Inventory Manager</h3>
                     <h3 className="">Inventory management system using React, Node and MongoDB</h3>
-                    <a href="https://flickity.metafizzy.co/" target="_blank" rel="noopener noreferrer" className="btn">Tell me more</a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" className="btn">Tell me more</a>
                 </div>
             </div>
             <div className="carousel-cell" style={{ backgroundImage: `url(${movieBrowser})` }}>
@@ -107,7 +107,7 @@ function JaunProjects() {
                 <div className="inner">
                     <h3 className="subtitle">Pig Game</h3>
                     <h3 className="">Another simple Javascript game with HTML and CSS, the first player to 100 wins, but if you roll a 1 you lose all current points, you can hold on to your points by pressing the hold button</h3>
-                    <a href="https://flickity.metafizzy.co/" target="_blank" rel="noopener noreferrer" className="btn">Tell me more</a>
+                    <a href="https://jaun-van-deventer.github.io/pig-game/" target="_blank" rel="noopener noreferrer" className="btn">Tell me more</a>
                 </div>
             </div>
         </div>
