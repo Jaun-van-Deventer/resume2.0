@@ -21,8 +21,8 @@ function JaunProfile () {
 
     return (
         <div className="cert-container">
-                <img src="./src/assets/jcert.png" alt="Harvard CS50"  /> &nbsp;
-                <img src="./src/assets/jcert2.png" alt="Upskillist CS" />
+                <img src="/assets/jcert.png" alt="Harvard CS50"  /> &nbsp;
+                <img src="/assets/jcert2.png" alt="Upskillist CS" />
         </div>
     )
 }
