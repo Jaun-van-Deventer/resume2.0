@@ -22,14 +22,14 @@
 
 /* Left half - Background Image */
 .left-half {
-  background-image: url('/assets/backgroundA.jpeg');
-  background-color: #f0f0f0;  /* Fallback background color */
+  background-image: url('public/assets/backgroundA.jpeg');
+  background-color: #000;  /* Fallback background color */
 }
 
 /* Right half - Background Image */
 .right-half {
-  background-image: url('/assets/backgroundB.jpg');
-  background-color: #ffffff; /* Fallback background color */
+  background-image: url('public/assets/backgroundB.jpg');
+  background-color: #000; /* Fallback background color */
 }
 
 /* Content styling for both halves */

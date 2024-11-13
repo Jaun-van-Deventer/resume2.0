@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useMenu } from "../components/MenuContext";
-import jcert from "/assets/jcert.png"
-import jcert2 from "/assets/jcert2.png"
+import jcert from "/public/assets/jcert.png"
+import jcert2 from "/public/assets/jcert2.png"
 
 function JaunProfile () {
     
