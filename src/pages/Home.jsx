@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import jaunImage from "/assets/jaun.jpg";
 import chevonneImage from "/assets/chevonne.jpg";
+import backgroundA from "/assets/backgroundA.jpeg";
+import backgroundB from "/assets/backgroundB.jpg";
 import { useMenu } from "../components/MenuContext";
 
 function Home() {
@@ -27,7 +29,7 @@ function Home() {
       {/* Left Half - Jaun's Profile */}
       <div
         className={`half left-half ${hoveredHalf === 'left' ? 'focused' : 'blurred'}`}
-        style={{backgroundImage: "url('/assets/backgroundA.jpeg')", backgroundColor: "#000"}}
+        style={{backgroundImage: `url(${backgroundA})`, backgroundColor: "#000"}}
         onMouseEnter={() => setHoveredHalf('left')}
         onMouseLeave={() => setHoveredHalf(null)}
       >
@@ -45,7 +47,7 @@ function Home() {
       {/* Right Half - Chevonne's Profile */}
       <div
         className={`half right-half ${hoveredHalf === 'right' ? 'focused' : 'blurred'}`}
-        style={{backgroundImage: "url('/assets/backgroundB.jpg')", backgroundColor: "#000"}}
+        style={{backgroundImage: `url(${backgroundB})`, backgroundColor: "#000"}}
         onMouseEnter={() => setHoveredHalf('right')}
         onMouseLeave={() => setHoveredHalf(null)}
       >
