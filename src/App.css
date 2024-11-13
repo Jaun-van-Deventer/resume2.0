@@ -98,3 +98,7 @@ p {
 .section h2 {
   margin-top: 0;
 }
+
+.profile-container {
+  margin-top: 5rem;
+}
