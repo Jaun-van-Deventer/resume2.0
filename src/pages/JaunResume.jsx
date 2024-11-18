@@ -27,12 +27,13 @@ const JaunResume = () => {
         <h2>Aspiration</h2>
         <p>
             I am an enthusiastic, self-taught developer. I have previous
-            experience in the electrical construction field, but have always
-            been passionate about technology, and would like to embark on a
-            new challenge in the field of development. I am self-driven, a fast
-            learner and consider myself to be a positive asset to a team. I
-            enjoy keeping up to date with the latest technology and trends,
-            therefore will always be eager to learn and improve my skills.
+            experience in the electrical construction field and I am currently
+            working in Game Support for one of the biggest game companies out
+            there, but have always been passionate about technology, and would
+            like to embark on a new challenge in the field of development. I 
+            am self-driven, a fast learner and consider myself to be a positive
+            asset to a team. I enjoy keeping up to date with the latest technology
+            and trends, therefore will always be eager to learn and improve my skills.
         </p>
       </div>
       
@@ -64,7 +65,7 @@ const JaunResume = () => {
             <li>HTML5</li>
             <li>PHP</li>
             <li>SQL</li>
-            <li>PostgreSQL</li>
+            <li>MongoDB</li>
             <li>C</li>
         </ul>
       </div>
@@ -75,25 +76,17 @@ const JaunResume = () => {
         <p>5CA South Africa, 2023-Present</p>
         <ul>
           <li>Technical support and client liaison</li>
-          <li>Handled account recovery and ticket management</li>
-        </ul>
-
-        <h3>Electrical Supervisor</h3>
-        <p>CJM Electrical Projects, 2015-2023</p>
-        <ul>
-          <li>Electrical maintenance and installations</li>
-          <li>Client liaison, task planning, and stock purchasing</li>
-          <li>Installation of CCTV, electrical fencing, and more</li>
+          <li>Handled account and tech related issues via ticket system</li>
         </ul>
       </div>
       <div className="section">
         <h3>Technologies I'm excited about learning</h3>
         <ul>
+            <li>Docker</li>
             <li>C++</li>
             <li>GoLang</li>
             <li>Rust</li>
             <li>Postman</li>
-            <li>Docker</li>
         </ul>
       </div>
     </div>

@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import jaunImage from "/assets/jaun.jpg";
 import chevonneImage from "/assets/chevonne.jpg";
-import backgroundA from "/assets/backgroundA.jpeg";
-import backgroundB from "/assets/backgroundB.jpg";
+import backgroundA from "/assets/left_half.png";
+import backgroundB from "/assets/right_half.png";
 import { useMenu } from "../components/MenuContext";
 
 function Home() {
@@ -36,10 +36,10 @@ function Home() {
         <div className="content text-light">
           <img src={jaunImage} alt="Jaun" className="profile-photo" />
           <h1><strong>Jaun van Deventer</strong></h1>
-          <p><strong>Graduate Developer</strong></p>
+          <p><strong>Software Developer</strong></p>
           <p>Tech Stack: JavaScript, React, MongoDB</p>
           <Link to="/jaun" className="link-style">
-          <button type="button" className="btn btn-light">Click here to learn more</button>
+          <button type="button" className="btn btn-light">Click here to open Profile</button>
           </Link>
         </div>
       </div>
@@ -54,10 +54,10 @@ function Home() {
         <div className="content text-light">
           <img src={chevonneImage} alt="Chevonne" className="profile-photo" />
           <h1><strong>Chevonne Serfontein</strong></h1>
-          <p><strong>Graduate Developer</strong></p>
+          <p><strong>Software Developer</strong></p>
           <p>Tech Stack: C#, React, DynamoDB</p>
           <Link to="/chevonne" className="link-style">
-          <button type="button" className="btn btn-light">Click here to learn more</button>
+          <button type="button" className="btn btn-light">Click here to open Profile</button>
           </Link>
         </div>
       </div>
