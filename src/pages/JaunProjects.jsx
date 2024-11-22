@@ -65,48 +65,48 @@ function JaunProjects() {
             <div className="carousel-cell" style={{ backgroundImage: `url(${resumeGameImage})` }}>
                 <div className="overlay"></div>
                 <div className="inner">
-                    <h3 className="subtitle">Resume Game</h3>
-                    <h3 className="">Gamified way to explore my resume using Kaboom.js and Vite</h3>
+                    <h3 className="title">Resume Game</h3>
+                    <h3 className="subtitle">Gamified way to explore my resume using Kaboom.js and Vite</h3>
                     <a href="https://jaun-van-deventer.github.io/resume_game/" target="_blank" rel="noopener noreferrer" className="btn">Tell me more</a>
                 </div>
             </div>
             <div className="carousel-cell" style={{ backgroundImage: `url(${quicklink})` }}>
                 <div className="overlay"></div>
                 <div className="inner">
-                    <h3 className="subtitle">Quicklink-QR</h3>
-                    <h3 className="">An extension that I made to turn any link into a scannable and shareable QR code</h3>
+                    <h3 className="title">Quicklink-QR</h3>
+                    <h3 className="subtitle">An extension that I made to turn any link into a scannable and shareable QR code</h3>
                     <a href="https://github.com/Jaun-van-Deventer/Quicklink-QR" target="_blank" rel="noopener noreferrer" className="btn">Tell me more</a>
                 </div>
             </div>
             <div className="carousel-cell" style={{ backgroundImage: `url(${invenManager})` }}>
                 <div className="overlay"></div>
                 <div className="inner">
-                    <h3 className="subtitle">Inventory Manager</h3>
-                    <h3 className="">Inventory management system using React, Node and MongoDB</h3>
+                    <h3 className="title">Inventory Manager</h3>
+                    <h3 className="subtitle">Inventory management system using React, Node and MongoDB</h3>
                     <a href="#" target="_blank" rel="noopener noreferrer" className="btn">Tell me more</a>
                 </div>
             </div>
             <div className="carousel-cell" style={{ backgroundImage: `url(${movieBrowser})` }}>
                 <div className="overlay"></div>
                 <div className="inner">
-                    <h3 className="subtitle">Movie Browser</h3>
-                    <h3 className="">An unfinished movie browser that lets you search for any movie using React, API implementation needs to be finished</h3>
+                    <h3 className="title">Movie Browser</h3>
+                    <h3 className="subtitle">An unfinished movie browser that lets you search for any movie using React, API implementation needs to be finished</h3>
                     <a href="https://jaun-van-deventer.github.io/react-movie-database/" target="_blank" rel="noopener noreferrer" className="btn">Tell me more</a>
                 </div>
             </div>
             <div className="carousel-cell" style={{ backgroundImage: `url(${guessNum})` }}>
                 <div className="overlay"></div>
                 <div className="inner">
-                    <h3 className="subtitle">Guess My Number</h3>
-                    <h3 className="">A simple guess my number game using JavaScript,HTML and CSS</h3>
+                    <h3 className="title">Guess My Number</h3>
+                    <h3 className="subtitle">A simple guess my number game using JavaScript,HTML and CSS</h3>
                     <a href="https://jaun-van-deventer.github.io/guess-my-number/" target="_blank" rel="noopener noreferrer" className="btn">Tell me more</a>
                 </div>
             </div>
             <div className="carousel-cell" style={{ backgroundImage: `url(${pigGame})` }}>
                 <div className="overlay"></div>
                 <div className="inner">
-                    <h3 className="subtitle">Pig Game</h3>
-                    <h3 className="">Another simple Javascript game with HTML and CSS, the first player to 100 wins, but if you roll a 1 you lose all current points, you can hold on to your points by pressing the hold button</h3>
+                    <h3 className="title">Pig Game</h3>
+                    <h3 className="subtitle">Another simple Javascript game with HTML and CSS, the first player to 100 wins, but if you roll a 1 you lose all current points, you can hold on to your points by pressing the hold button</h3>
                     <a href="https://jaun-van-deventer.github.io/pig-game/" target="_blank" rel="noopener noreferrer" className="btn">Tell me more</a>
                 </div>
             </div>

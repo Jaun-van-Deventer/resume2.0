@@ -1,4 +1,3 @@
-/* Basic styling for the whole page */
 .home-container {
   display: flex;
   height: 100vh;
@@ -6,7 +5,6 @@
   overflow: hidden;
 }
 
-/* Styling for each half of the page */
 .half {
   flex: 1;
   display: flex;
@@ -20,19 +18,16 @@
   height: 100%;
 }
 
-/* Left half - Background Image */
 .left-half {
   background-image: url('public/assets/backgroundA.jpeg');
-  background-color: #000;  /* Fallback background color */
+  background-color: #000;  
 }
 
-/* Right half - Background Image */
 .right-half {
   background-image: url('public/assets/backgroundB.jpg');
-  background-color: #000; /* Fallback background color */
+  background-color: #000; 
 }
 
-/* Content styling for both halves */
 .content {
   text-align: center;
   padding: 20px;
@@ -49,13 +44,11 @@ p {
   line-height: 1.6;
 }
 
-/* Blur effect for both halves */
 .blurred {
   filter: blur(5px);
   transition: all 0.3s ease-in-out;
 }
 
-/* Focus effect when hovering over the section */
 .focused {
   filter: blur(0);
   transform: scale(1.05);
