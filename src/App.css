@@ -63,10 +63,10 @@ p {
 }
 
 .profile-photo {
-  width: 150px; /* Adjust size as needed */
+  width: 150px; 
   height: auto;
-  border-radius: 50%; /* Makes the image circular */
-  margin-bottom: 20px; /* Spacing below image */
+  border-radius: 50%; 
+  margin-bottom: 20px; 
 }
 
 .cert-container {
@@ -74,8 +74,9 @@ p {
 }
 
 .carouselContainer{
-  width: 100vw;
-  height: 100vw;
+  max-width: 80vw;
+  height: 100vh;
+  margin: auto;
 }
 
 .resume-container {
@@ -84,7 +85,7 @@ p {
   flex-wrap: wrap;
   gap: 20px;
   justify-content: space-around;
-  margin-top: 5rem;
+  margin-top: 3rem;
 }
 
 .section {
@@ -102,3 +103,103 @@ p {
 .profile-container {
   margin-top: 5rem;
 }
+
+.light-text {
+  color: white;
+  text-shadow: 1px 1px black;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.bottom-buttons-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  flex-wrap: wrap; /* Allow buttons to wrap if needed */
+  gap: 10px; /* Add space between buttons */
+  padding: 10px;
+}
+
+.bottom-buttons-container .btn {
+  flex: 1 1 calc(50% - 20px); /* Make buttons take up 50% of the width minus gap */
+  max-width: 200px; /* Optional: Limit the maximum button width */
+  text-align: center; /* Center-align the text */
+}
+
+.btn {
+  min-width: 120px;
+  font-size: 1rem;
+}
+
+#lPBackImg {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
+#lPBackImg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url(/assets/FULL.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  filter: blur(8px);
+  z-index: -1; /* Places the background below the content */
+}
+
+/* From Uiverse.io by JaydipPrajapati1910 */ 
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  position: relative;
+  cursor: pointer;
+  font-weight: 900;
+  transition-duration: .2s;
+  background: linear-gradient(0deg, #000, #272727);
+}
+
+.card:before, .card:after {
+  content: '';
+  position: absolute;
+  border-radius: 10%;
+  background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
+		#0000ff, #00ff00,#ffff00, #ff0000);
+  background-size: 400%;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  z-index: -1;
+  animation: steam 20s linear infinite;
+}
+
+@keyframes steam {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.card:after {
+  filter: blur(100px);
+}
+

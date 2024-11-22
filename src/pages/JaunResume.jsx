@@ -22,7 +22,7 @@ const JaunResume = () => {
     }, [setMenuTitle, setMenuItems, setMenuSocial]);
 
   return (
-    <div className="resume-container">
+    <div className="resume-container" id="lPBackImg">
       <div className="section aspiration">
         <h2>Aspiration</h2>
         <p>

@@ -22,10 +22,10 @@ function JaunProfile () {
         }, [setMenuTitle, setMenuItems, setMenuSocial]);
 
     return (
-        <div className="cert-container">
+            <div className="cert-container" id="lPBackImg">
                 <img src={jcert} alt="Harvard CS50"  /> &nbsp;
                 <img src={jcert2} alt="Upskillist CS" />
-        </div>
+            </div>
     )
 }
 
