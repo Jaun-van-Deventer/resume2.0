@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import jaunImage from "/assets/jaun.jpg";
-import chevonneImage from "/assets/chevonne.jpg";
+import otherUser from "/assets/otherUser.jpg";
 import backgroundA from "/assets/left_half.png";
 import backgroundB from "/assets/right_half.png";
 import { useMenu } from "../components/MenuContext";
 
 function Home() {
   const { setMenuTitle, setMenuItems, setMenuSocial } = useMenu();
-  // State to track which half the cursor is hovering over
   const [hoveredHalf, setHoveredHalf] = useState(null);
 
   useEffect(() => {
@@ -16,7 +15,7 @@ function Home() {
     setMenuItems([
       { label: 'Home', link: '/' },
       { label: 'Jaun', link: 'Jaun' },
-      { label: 'Chevonne', link: 'Chevonne' },
+      { label: 'Other User', link: 'OtherUser' },
     ]);
     setMenuSocial({
       linkedin: "/",
@@ -26,7 +25,6 @@ function Home() {
 
   return (
     <div className="home-container">
-      {/* Left Half - Jaun's Profile */}
       <div
         className={`half left-half ${hoveredHalf === 'left' ? 'focused' : 'blurred'}`}
         style={{backgroundImage: `url(${backgroundA})`, backgroundColor: "#000"}}
@@ -44,7 +42,6 @@ function Home() {
         </div>
       </div>
 
-      {/* Right Half - Chevonne's Profile */}
       <div
         className={`half right-half ${hoveredHalf === 'right' ? 'focused' : 'blurred'}`}
         style={{backgroundImage: `url(${backgroundB})`, backgroundColor: "#000"}}
@@ -52,11 +49,11 @@ function Home() {
         onMouseLeave={() => setHoveredHalf(null)}
       >
         <div className="content text-light">
-          <img src={chevonneImage} alt="Chevonne" className="profile-photo" />
-          <h1><strong>Chevonne Serfontein</strong></h1>
+          <img src={otherUser} alt="Other User" className="profile-photo" />
+          <h1><strong>Other User</strong></h1>
           <p><strong>Software Developer</strong></p>
-          <p>Tech Stack: C#, React, DynamoDB</p>
-          <Link to="/chevonne" className="link-style">
+          <p>Tech Stack: C#, React, MySQL</p>
+          <Link to="/" className="link-style">
           <button type="button" className="btn btn-light">Click here to open Profile</button>
           </Link>
         </div>

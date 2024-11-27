@@ -8,7 +8,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import NavbarOffCanvas from './components/NavBarOffCanvas';
 import Home from './pages/Home';
 import JaunProfile from './pages/JaunProfile';
-import ChevonneProfile from './pages/ChevonneProfile';
+import OtherUser from './pages/OtherUser';
 import JaunCertificates from './pages/JaunCertificates'
 import JaunProjects from './pages/JaunProjects';
 import JaunResume from './pages/JaunResume'
@@ -27,7 +27,7 @@ function App() {
           <Route path="/jauncert" element={<JaunCertificates />} />
           <Route path="/jaunprojects" element={<JaunProjects />} />
           <Route path="/jaunresume" element={<JaunResume />} />
-          <Route path="/chevonne" element={<ChevonneProfile />} />
+          <Route path="/OtherUser" element={<OtherUser />} />
         </Routes>
       </Router>
     </MenuProvider>

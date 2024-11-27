@@ -1,20 +1,20 @@
 import React, { useEffect } from "react";
 import { useMenu } from "../components/MenuContext";
 
-function ChevonneProfile () {
+function OtherUser () {
 
     const { setMenuTitle, setMenuItems, setMenuSocial } = useMenu();
 
     useEffect(() => {
-        setMenuTitle('Chevonne');
+        setMenuTitle('Other User');
         setMenuItems([
             { label: 'Home', link: '/' },
             { label: 'Certificates', link: '/' },
             { label: 'About Me', link: '/' },
         ]);
         setMenuSocial({
-            linkedin: "https://www.linkedin.com/in/chevonne-serfontein/",
-            github: "https://github.com/ChevonneSerfontein2020"
+            linkedin: "#",
+            github: "#"
         });
     }, [setMenuTitle, setMenuItems, setMenuSocial]);
 
@@ -26,4 +26,4 @@ function ChevonneProfile () {
     )
 }
 
-export default ChevonneProfile;
+export default OtherUser;
