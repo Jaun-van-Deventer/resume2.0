@@ -19,11 +19,10 @@ function App() {
 
   return (
       <MenuProvider>
-      <Router basename="/resume2.0">
+      <Router basename="/">
         <NavbarOffCanvas />
       <Routes>
         <Route path="/" element={<Home />} />
-          <Route path="*" element={<NotFound />} />
           <Route path="/jaun" element={<JaunProfile />} />
           <Route path="/jauncert" element={<JaunCertificates />} />
           <Route path="/jaunprojects" element={<JaunProjects />} />
