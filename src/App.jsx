@@ -23,6 +23,7 @@ function App() {
         <NavbarOffCanvas />
       <Routes>
         <Route path="/" element={<Home />} />
+          <Route path="*" element={<NotFound />} />
           <Route path="/jaun" element={<JaunProfile />} />
           <Route path="/jauncert" element={<JaunCertificates />} />
           <Route path="/jaunprojects" element={<JaunProjects />} />
