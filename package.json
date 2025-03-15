@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run generate-index && vite build",
+    "build": "vite build",
     "postbuild": "node postbuild.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
