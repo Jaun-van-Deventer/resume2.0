@@ -4,7 +4,7 @@ import frontMatter from 'front-matter';
 export async function getSortedPostsData() {
     try {
         // Fetch the list of blog post files
-        const response = await fetch('/public/blog-posts/index.json');
+        const response = await fetch('/blog-posts/index.json');
         
         // Check if the response is OK
         if (!response.ok) {
