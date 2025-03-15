@@ -60,7 +60,7 @@ function NavbarOffCanvas() {
                         </h5>
                         <button
                             type="button"
-                            className="btn-close btn-close-white"
+                            className="btn-close btn-close"
                             data-bs-dismiss="offcanvas"
                             aria-label="Close"
                         ></button>
