@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { useMenu } from "../components/MenuContext";
 import Flickity from 'flickity';
 import 'flickity/css/flickity.css';
-import '../styles/JaunProjects.scss';
+import '../styles/jaunProjects.scss';
 import resumeGameImage from '/assets/resume-game.png';
 import invenManager from '/assets/inven-man.png';
 import movieBrowser from '/assets/movie-browser.png';

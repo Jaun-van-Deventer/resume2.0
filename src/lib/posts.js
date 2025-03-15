@@ -26,7 +26,7 @@ export async function getSortedPostsData() {
                 }
 
                 const fileContents = await postResponse.text();
-                const matterResult = frontMatter(fileContents); // Use front-matter instead of gray-matter
+                const matterResult = frontMatter(fileContents); 
 
                 return {
                     id,
