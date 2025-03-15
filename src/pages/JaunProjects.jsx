@@ -1,6 +1,5 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useMenu } from "../components/MenuContext";
-import { Link } from "react-router-dom";
 import Flickity from 'flickity';
 import 'flickity/css/flickity.css';
 import '../styles/JaunProjects.scss';
@@ -22,6 +21,7 @@ function JaunProjects() {
             { label: 'Certificates', link: '/jauncert' },
             { label: 'Profile', link: '/Jaun' },
             { label: 'About Me', link: '/jaunresume' },
+            { label: 'Blog', link: '/blog' },
         ]);
         setMenuSocial({
             linkedin: "https://www.linkedin.com/in/jaun-van-deventer-51314628a/",
