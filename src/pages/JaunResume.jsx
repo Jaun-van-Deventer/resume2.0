@@ -29,7 +29,7 @@ const JaunResume = () => {
             <div className="section aspiration">
                 <h2>Aspiration</h2>
                 <p>
-                    I am an enthusiastic, self-taught developer with a background in electrical construction and game support. Passionate about technology, I am eager to transition into a development role where I can leverage my problem-solving skills and fast-learning ability. I thrive in team environments and am always excited to learn and grow.
+                    I am an enthusiastic, self-taught developer with a background in the electrical field and game support. Passionate about technology, I am eager to transition into a development role where I can leverage my problem-solving skills and fast-learning ability. I thrive in team environments and am always excited to learn and grow.
                 </p>
             </div>
 
