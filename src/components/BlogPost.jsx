@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getPostData } from '../lib/posts';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from "remark-gfm";
 import { useMenu } from '../components/MenuContext';
 
 export default function BlogPost() {
@@ -49,7 +50,7 @@ export default function BlogPost() {
             <h1>{post.title}</h1>
             <p className="blog-date">{post.date}</p>
             <img src={post.image} alt={post.title} className="blog-image" />
-            <ReactMarkdown>{post.content}</ReactMarkdown>
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.content}</ReactMarkdown>
         </div>
     );
 }
