@@ -428,7 +428,7 @@ function NavbarOffCanvas() {
 
                 {/* Footer */}
                 <div style={{ padding: '12px 24px 24px', fontSize: '0.72rem', color: isDarkMode ? '#4a4540' : '#b0a898' }}>
-                    © 2025 Jaun van Deventer
+                    © 2026 Jaun van Deventer
                 </div>
             </div>
         </>

@@ -366,7 +366,7 @@ export default function BlogPost() {
                 )}
 
                 <footer className="bpost-footer">
-                    <p style={{ margin: 0 }}>© 2025 <span>Jaun van Deventer</span>. All rights reserved.</p>
+                    <p style={{ margin: 0 }}>© 2026 <span>Jaun van Deventer</span>. All rights reserved.</p>
                     <Link to="/blog" className="bpost-footer-back">← More articles</Link>
                 </footer>
             </div>
