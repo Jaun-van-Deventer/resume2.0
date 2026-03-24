@@ -1,20 +1,13 @@
-import { useState } from "react"; // Add useState for dark mode
 import { Link } from "react-router-dom";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { useMenu } from "./MenuContext";
 import "../App.css";
+import { useContext } from "react";
+import { DarkModeContext } from "./DarkModeContext";
 
 function NavbarOffCanvas() {
     const { menuTitle, menuItems, menuSocial } = useMenu();
-    const [isDarkMode, setIsDarkMode] = useState(false); // State for dark mode
-
-    const toggleDarkMode = () => {
-        setIsDarkMode((prevMode) => {
-            const newMode = !prevMode;
-            document.body.classList.toggle("dark-mode", newMode); // Use newMode
-            return newMode;
-        });
-    };
+    const { isDarkMode, toggleDarkMode } = useContext(DarkModeContext);
 
     return (
         <nav className="navbar navbar-dark bg-dark fixed-top">
