@@ -28,6 +28,7 @@ function App() {
             <Route path="/jaunresume" element={<JaunResume />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:id" element={<BlogPost />} />
+            <Route path="*" element={<JaunProfile />} />
           </Routes>
         </Router>
       </MenuProvider>

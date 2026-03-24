@@ -4,7 +4,7 @@ import jcert from "/assets/jcert.png";
 import jcert2 from "/assets/jcert2.png";
 import "../App.css";
 
-function JaunProfile() {
+function JaunCertificates() {
     const { setMenuTitle, setMenuItems, setMenuSocial } = useMenu();
     const [selectedCert, setSelectedCert] = useState(null); // State for modal
 
@@ -58,4 +58,4 @@ function JaunProfile() {
     );
 }
 
-export default JaunProfile;
+export default JaunCertificates;
