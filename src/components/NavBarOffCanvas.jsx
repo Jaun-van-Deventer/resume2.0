@@ -310,34 +310,17 @@ function NavbarOffCanvas() {
             {/* Overlay */}
             <div
                 onClick={closeDrawer}
-                style={{
-                    position: 'fixed',
-                    inset: 0,
-                    background: 'rgba(0,0,0,0.5)',
-                    zIndex: 1100,
-                    opacity: isOpen ? 1 : 0,
-                    pointerEvents: isOpen ? 'all' : 'none',
-                    transition: 'opacity 0.3s ease',
-                    backdropFilter: 'blur(2px)',
-                }}
+                className={`nav-overlay${isOpen ? " open" : ""}`}
             />
 
             {/* Drawer */}
-            <div style={{
-                position: 'fixed',
-                top: 0,
-                right: 0,
-                width: '300px',
-                height: '100vh',
-                background: isDarkMode ? '#0f0d0a' : '#f4f1ec',
-                zIndex: 1200,
-                display: 'flex',
-                flexDirection: 'column',
-                transform: isOpen ? 'translateX(0)' : 'translateX(100%)',
-                transition: 'transform 0.35s cubic-bezier(0.4, 0, 0.2, 1)',
-                borderLeft: '1px solid rgba(176,125,74,0.15)',
-                fontFamily: "'DM Sans', sans-serif",
-            }}>
+            <div
+                className={`nav-drawer${isOpen ? " open" : ""}`}
+                style={{
+                    background: isDarkMode ? '#0f0d0a' : '#f4f1ec',
+                    fontFamily: "'DM Sans', sans-serif",
+                }}
+            >
                 {/* Header */}
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '20px 24px', borderBottom: '1px solid rgba(176,125,74,0.12)' }}>
                     <span style={{ fontFamily: "'DM Serif Display', serif", fontSize: '1.3rem', color: isDarkMode ? '#f0ece3' : '#1a1208' }}>
