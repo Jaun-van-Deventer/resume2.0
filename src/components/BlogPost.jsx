@@ -47,11 +47,7 @@ export default function BlogPost() {
         });
     }, [setMenuTitle, setMenuItems, setMenuSocial]);
 
-    usePageMeta('Projects');  
-    usePageMeta('About Me');      
-    usePageMeta('Certificates');  
-    usePageMeta('Blog');          
-    usePageMeta(); 
+    usePageMeta();
 
     return (
         <>
