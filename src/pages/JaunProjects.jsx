@@ -66,7 +66,6 @@ function JaunProjects() {
                 .jp-carousel { width: 100%; height: 100vh; position: relative; overflow: hidden; }
                 .jp-track {
                     display: flex; height: 100%;
-                    transform: translateX(calc(-${0} * 100%));
                     transition: transform 0.55s cubic-bezier(0.77,0,0.175,1);
                     will-change: transform;
                 }
