@@ -1,18 +1,29 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useContext, useCallback, useState } from "react";
 import { useMenu } from "../components/MenuContext";
-import Flickity from 'flickity';
-import 'flickity/css/flickity.css';
-import '../styles/jaunProjects.scss';
+import { DarkModeContext } from "../components/DarkModeContext";
 import resumeGameImage from '/assets/resume-game.png';
 import invenManager from '/assets/inven-man.png';
 import movieBrowser from '/assets/movie-browser.png';
 import guessNum from '/assets/guess-num.png';
 import pigGame from '/assets/pig-game.png';
-import quicklink from '/assets/quicklink.png'
+import quicklink from '/assets/quicklink.png';
+import usePageMeta from '../hooks/usePageMeta';
+
+const projects = [
+    { img: resumeGameImage, tag: "Game / Frontend", title: "Resume Game", desc: "A gamified way to explore my resume built with Kaboom.js and Vite.", link: "https://jaun-van-deventer.github.io/resume_game/" },
+    { img: quicklink, tag: "Browser Extension", title: "Quicklink-QR", desc: "A Chrome extension that turns any link into a scannable, shareable QR code.", link: "https://github.com/Jaun-van-Deventer/Quicklink-QR" },
+    { img: invenManager, tag: "Full-Stack", title: "Inventory Manager", desc: "An inventory management system built with React, Node.js, and MongoDB.", link: "#" },
+    { img: movieBrowser, tag: "Frontend / API", title: "Movie Browser", desc: "Search for any movie via an external API. React-based with API integration in progress.", link: "https://jaun-van-deventer.github.io/react-movie-database/" },
+    { img: guessNum, tag: "Vanilla JS", title: "Guess My Number", desc: "A simple guess-the-number game using vanilla JavaScript, HTML, and CSS.", link: "https://jaun-van-deventer.github.io/guess-my-number/" },
+    { img: pigGame, tag: "Vanilla JS", title: "Pig Game", desc: "First to 100 wins — but rolling a 1 wipes your current score. Press Hold to bank your points.", link: "https://jaun-van-deventer.github.io/pig-game/" },
+];
 
 function JaunProjects() {
     const { setMenuTitle, setMenuItems, setMenuSocial } = useMenu();
-    const carouselRef = useRef(null);
+    const { isDarkMode } = useContext(DarkModeContext);
+    const [current, setCurrent] = useState(0);
+    const touchStartX = useRef(null);
+    const total = projects.length;
 
     useEffect(() => {
         setMenuTitle('Jaun');
@@ -29,88 +40,130 @@ function JaunProjects() {
         });
     }, [setMenuTitle, setMenuItems, setMenuSocial]);
 
-    useEffect(() => {
-        const options = {
-            accessibility: true,
-            prevNextButtons: true,
-            pageDots: true,
-            setGallerySize: false,
-            arrowShape: {
-                x0: 10,
-                x1: 60,
-                y1: 50,
-                x2: 60,
-                y2: 45,
-                x3: 15
-            }
-        };
+    const go = useCallback((idx) => {
+        setCurrent(((idx % total) + total) % total);
+    }, [total]);
 
-        const flkty = new Flickity(carouselRef.current, options);
+    const handleTouchStart = (e) => { touchStartX.current = e.touches[0].clientX; };
+    const handleTouchEnd = (e) => {
+        if (touchStartX.current === null) return;
+        const dx = e.changedTouches[0].clientX - touchStartX.current;
+        if (Math.abs(dx) > 40) go(dx < 0 ? current + 1 : current - 1);
+        touchStartX.current = null;
+    };
 
-        // Parallax scroll effect for each slide
-        flkty.on('scroll', () => {
-            const slides = carouselRef.current.getElementsByClassName('carousel-cell');
-            flkty.slides.forEach((slide, i) => {
-                const image = slides[i];
-                const x = (slide.target + flkty.x) * -1 / 3;
-                image.style.backgroundPosition = `${x}px`;
-            });
-        });
-
-        return () => flkty.destroy(); // Cleanup on unmount
-    }, []);
+    usePageMeta('Projects');
 
     return (
-        <div className="hero-slider" ref={carouselRef} data-carousel>
-            <div className="carousel-cell" style={{ backgroundImage: `url(${resumeGameImage})` }}>
-                <div className="overlay"></div>
-                <div className="inner">
-                    <h3 className="title">Resume Game</h3>
-                    <h3 className="subtitle">Gamified way to explore my resume using Kaboom.js and Vite</h3>
-                    <a href="https://jaun-van-deventer.github.io/resume_game/" target="_blank" rel="noopener noreferrer" className="btn">Tell me more</a>
+        <>
+            <style>{`
+                @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600&display=swap');
+                .jp-projects-page { font-family: 'DM Sans', sans-serif; background: #0d0b08; }
+                .jp-carousel { width: 100%; height: 100vh; position: relative; overflow: hidden; }
+                .jp-track {
+                    display: flex; height: 100%;
+                    transition: transform 0.55s cubic-bezier(0.77,0,0.175,1);
+                    will-change: transform;
+                }
+                .jp-slide {
+                    min-width: 100%; height: 100vh;
+                    background-size: cover; background-repeat: no-repeat; background-position: center;
+                    position: relative; flex-shrink: 0;
+                }
+                .jp-cell-overlay {
+                    position: absolute; inset: 0;
+                    background: linear-gradient(to top, rgba(10,8,5,0.92) 0%, rgba(10,8,5,0.35) 55%, transparent 100%);
+                }
+                .jp-cell-tag {
+                    position: absolute; top: 88px; left: 48px;
+                    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+                    color: #b07d4a; background: rgba(15,13,10,0.7); border: 1px solid rgba(176,125,74,0.3);
+                    border-radius: 20px; padding: 5px 14px; backdrop-filter: blur(8px);
+                }
+                @media (max-width: 600px) { .jp-cell-tag { left: 24px; top: 80px; } }
+                .jp-cell-inner { position: absolute; bottom: 80px; left: 0; right: 0; text-align: center; padding: 0 48px; }
+                @media (max-width: 600px) { .jp-cell-inner { padding: 0 24px; bottom: 60px; } }
+                .jp-cell-title {
+                    font-family: 'DM Serif Display', serif; font-size: clamp(2.4rem, 6vw, 4.5rem);
+                    line-height: 1.0; color: #f0ece3; margin: 0 0 12px; font-style: italic;
+                }
+                .jp-cell-desc {
+                    font-size: clamp(0.95rem, 1.5vw, 1.1rem); color: rgba(240,236,227,0.75);
+                    max-width: 600px; margin: 0 auto 28px; line-height: 1.65;
+                }
+                .jp-cell-btn {
+                    display: inline-flex; align-items: center; gap: 8px;
+                    background: transparent; border: 1.5px solid rgba(176,125,74,0.7); color: #f0ece3;
+                    padding: 13px 28px; border-radius: 6px; text-decoration: none;
+                    font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 600;
+                    letter-spacing: 0.08em; text-transform: uppercase;
+                    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+                }
+                .jp-cell-btn:hover { background: rgba(176,125,74,0.15); border-color: #b07d4a; transform: translateY(-2px); color: #f0ece3; }
+                .jp-cell-counter {
+                    position: absolute; top: 88px; right: 48px;
+                    font-family: 'DM Serif Display', serif; font-size: 3rem;
+                    color: rgba(240,236,227,0.12); line-height: 1; pointer-events: none; user-select: none;
+                }
+                @media (max-width: 600px) { .jp-cell-counter { right: 24px; } }
+                .jp-nav-btn {
+                    position: absolute; top: 50%; transform: translateY(-50%);
+                    width: 52px; height: 52px; border-radius: 50%;
+                    background: rgba(15,13,10,0.65); border: 1px solid rgba(176,125,74,0.25);
+                    color: #b07d4a; font-size: 20px; display: flex; align-items: center; justify-content: center;
+                    cursor: pointer; z-index: 10; transition: background 0.2s, border-color 0.2s;
+                }
+                .jp-nav-btn:hover { background: rgba(176,125,74,0.15); border-color: rgba(176,125,74,0.6); }
+                .jp-nav-prev { left: 20px; }
+                .jp-nav-next { right: 20px; }
+                .jp-dots { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; z-index: 10; }
+                .jp-dot { width: 28px; height: 3px; border-radius: 2px; background: rgba(240,236,227,0.22); cursor: pointer; transition: background 0.3s; border: none; padding: 0; }
+                .jp-dot.active { background: #b07d4a; }
+            `}</style>
+
+            <div className={`jp-projects-page${isDarkMode ? ' dark' : ''}`}>
+                <div className="jp-carousel">
+                    <div
+                        className="jp-track"
+                        style={{ transform: `translateX(-${current * 100}%)` }}
+                        onTouchStart={handleTouchStart}
+                        onTouchEnd={handleTouchEnd}
+                    >
+                        {projects.map((p, i) => (
+                            <div
+                                key={i}
+                                className="jp-slide"
+                                style={{ backgroundImage: `url(${p.img})` }}
+                            >
+                                <div className="jp-cell-overlay" />
+                                <div className="jp-cell-tag">{p.tag}</div>
+                                <div className="jp-cell-counter">0{i + 1}</div>
+                                <div className="jp-cell-inner">
+                                    <h2 className="jp-cell-title">{p.title}</h2>
+                                    <p className="jp-cell-desc">{p.desc}</p>
+                                    <a href={p.link} target="_blank" rel="noopener noreferrer" className="jp-cell-btn">
+                                        View Project →
+                                    </a>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    <button className="jp-nav-btn jp-nav-prev" onClick={() => go(current - 1)}>&#8592;</button>
+                    <button className="jp-nav-btn jp-nav-next" onClick={() => go(current + 1)}>&#8594;</button>
+
+                    <div className="jp-dots">
+                        {projects.map((_, i) => (
+                            <button
+                                key={i}
+                                className={`jp-dot${i === current ? ' active' : ''}`}
+                                onClick={() => go(i)}
+                            />
+                        ))}
+                    </div>
                 </div>
             </div>
-            <div className="carousel-cell" style={{ backgroundImage: `url(${quicklink})` }}>
-                <div className="overlay"></div>
-                <div className="inner">
-                    <h3 className="title">Quicklink-QR</h3>
-                    <h3 className="subtitle">An extension that I made to turn any link into a scannable and shareable QR code</h3>
-                    <a href="https://github.com/Jaun-van-Deventer/Quicklink-QR" target="_blank" rel="noopener noreferrer" className="btn">Tell me more</a>
-                </div>
-            </div>
-            <div className="carousel-cell" style={{ backgroundImage: `url(${invenManager})` }}>
-                <div className="overlay"></div>
-                <div className="inner">
-                    <h3 className="title">Inventory Manager</h3>
-                    <h3 className="subtitle">Inventory management system using React, Node and MongoDB</h3>
-                    <a href="#" target="_blank" rel="noopener noreferrer" className="btn">Tell me more</a>
-                </div>
-            </div>
-            <div className="carousel-cell" style={{ backgroundImage: `url(${movieBrowser})` }}>
-                <div className="overlay"></div>
-                <div className="inner">
-                    <h3 className="title">Movie Browser</h3>
-                    <h3 className="subtitle">An unfinished movie browser that lets you search for any movie using React, API implementation needs to be finished</h3>
-                    <a href="https://jaun-van-deventer.github.io/react-movie-database/" target="_blank" rel="noopener noreferrer" className="btn">Tell me more</a>
-                </div>
-            </div>
-            <div className="carousel-cell" style={{ backgroundImage: `url(${guessNum})` }}>
-                <div className="overlay"></div>
-                <div className="inner">
-                    <h3 className="title">Guess My Number</h3>
-                    <h3 className="subtitle">A simple guess my number game using JavaScript,HTML and CSS</h3>
-                    <a href="https://jaun-van-deventer.github.io/guess-my-number/" target="_blank" rel="noopener noreferrer" className="btn">Tell me more</a>
-                </div>
-            </div>
-            <div className="carousel-cell" style={{ backgroundImage: `url(${pigGame})` }}>
-                <div className="overlay"></div>
-                <div className="inner">
-                    <h3 className="title">Pig Game</h3>
-                    <h3 className="subtitle">Another simple Javascript game with HTML and CSS, the first player to 100 wins, but if you roll a 1 you lose all current points, you can hold on to your points by pressing the hold button</h3>
-                    <a href="https://jaun-van-deventer.github.io/pig-game/" target="_blank" rel="noopener noreferrer" className="btn">Tell me more</a>
-                </div>
-            </div>
-        </div>
+        </>
     );
 }
 
