@@ -333,7 +333,12 @@ function JaunCertificates() {
                             onClick={() => setSelectedCert(cert.img)}
                             role="button"
                             tabIndex={0}
-                            onKeyDown={e => e.key === 'Enter' && setSelectedCert(cert.img)}
+                            onKeyDown={e => {
+                                if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+                                    e.preventDefault();
+                                    setSelectedCert(cert.img);
+                                }
+                            }}
                         >
                             <div className="jc-card-img-wrap">
                                 <img src={cert.img} alt={cert.title} />
