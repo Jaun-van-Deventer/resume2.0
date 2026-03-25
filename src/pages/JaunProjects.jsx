@@ -7,6 +7,7 @@ import movieBrowser from '/assets/movie-browser.png';
 import guessNum from '/assets/guess-num.png';
 import pigGame from '/assets/pig-game.png';
 import quicklink from '/assets/quicklink.png';
+import usePageMeta from '../hooks/usePageMeta';
 
 const projects = [
     { img: resumeGameImage, tag: "Game / Frontend", title: "Resume Game", desc: "A gamified way to explore my resume built with Kaboom.js and Vite.", link: "https://jaun-van-deventer.github.io/resume_game/" },
@@ -50,6 +51,12 @@ function JaunProjects() {
         if (Math.abs(dx) > 40) go(dx < 0 ? current + 1 : current - 1);
         touchStartX.current = null;
     };
+
+    usePageMeta('Projects');  
+    usePageMeta('About Me');      
+    usePageMeta('Certificates');  
+    usePageMeta('Blog');          
+    usePageMeta(); 
 
     return (
         <>

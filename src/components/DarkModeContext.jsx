@@ -1,15 +1,27 @@
-import { createContext, useState } from "react";
-import PropTypes from "prop-types"; 
+import { createContext, useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
 export const DarkModeContext = createContext();
 
 export const DarkModeProvider = ({ children }) => {
-    const [isDarkMode, setIsDarkMode] = useState(false);
+    const [isDarkMode, setIsDarkMode] = useState(() => {
+        try {
+            return localStorage.getItem("darkMode") === "true";
+        } catch {
+            return false;
+        }
+    });
 
-    const toggleDarkMode = () => {
-        setIsDarkMode(!isDarkMode);
-        document.body.classList.toggle("dark-mode", !isDarkMode);
-    };
+    useEffect(() => {
+        document.body.classList.toggle("dark-mode", isDarkMode);
+        try {
+            localStorage.setItem("darkMode", isDarkMode);
+        } catch {
+            // localStorage unavailable — silently ignore
+        }
+    }, [isDarkMode]);
+
+    const toggleDarkMode = () => setIsDarkMode(prev => !prev);
 
     return (
         <DarkModeContext.Provider value={{ isDarkMode, toggleDarkMode }}>
@@ -18,7 +30,6 @@ export const DarkModeProvider = ({ children }) => {
     );
 };
 
-// Add prop validation
 DarkModeProvider.propTypes = {
     children: PropTypes.node.isRequired,
 };

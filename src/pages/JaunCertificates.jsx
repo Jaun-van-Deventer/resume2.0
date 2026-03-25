@@ -3,6 +3,7 @@ import { useMenu } from "../components/MenuContext";
 import { DarkModeContext } from "../components/DarkModeContext";
 import jcert from "/assets/jcert.png";
 import jcert2 from "/assets/jcert2.png";
+import usePageMeta from '../hooks/usePageMeta';
 
 const certs = [
     {
@@ -41,6 +42,13 @@ function JaunCertificates() {
             github: "https://github.com/Jaun-van-Deventer"
         });
     }, [setMenuTitle, setMenuItems, setMenuSocial]);
+
+    usePageMeta('Projects');  
+    usePageMeta('About Me');      
+    usePageMeta('Certificates');  
+    usePageMeta('Blog');          
+    usePageMeta(); 
+
 
     return (
         <>
@@ -360,7 +368,7 @@ function JaunCertificates() {
                 )}
 
                 <footer className="jc-footer">
-                    <p style={{ margin: 0 }}>© 2025 <span>Jaun van Deventer</span>. All rights reserved.</p>
+                    <p style={{ margin: 0 }}>© {new Date().getFullYear()} <span>Jaun van Deventer</span>. All rights reserved.</p>
                 </footer>
             </div>
         </>

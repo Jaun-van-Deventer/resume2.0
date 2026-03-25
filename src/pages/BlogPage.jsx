@@ -4,6 +4,7 @@ import { getSortedPostsData } from '../lib/posts';
 import { useMenu } from '../components/MenuContext';
 import { useContext } from 'react';
 import { DarkModeContext } from '../components/DarkModeContext';
+import usePageMeta from '../hooks/usePageMeta';
 
 // Skeleton card shown while loading
 function SkeletonCard() {
@@ -63,6 +64,12 @@ export default function BlogPage() {
             p.title?.toLowerCase().includes(search.toLowerCase()) ||
             p.excerpt?.toLowerCase().includes(search.toLowerCase())
     );
+
+    usePageMeta('Projects');  
+    usePageMeta('About Me');      
+    usePageMeta('Certificates');  
+    usePageMeta('Blog');          
+    usePageMeta(); 
 
     return (
         <>

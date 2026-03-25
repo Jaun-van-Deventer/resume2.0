@@ -5,6 +5,8 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from "remark-gfm";
 import { useMenu } from '../components/MenuContext';
 import { DarkModeContext } from '../components/DarkModeContext';
+import usePageMeta from '../hooks/usePageMeta';
+import useReadingTime from '../hooks/useReadingTime';
 
 export default function BlogPost() {
     const { setMenuTitle, setMenuItems, setMenuSocial } = useMenu();
@@ -14,6 +16,7 @@ export default function BlogPost() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const d = isDarkMode;
+    const { text: readingTime } = useReadingTime(post?.content);
 
     useEffect(() => {
         const fetchPost = async () => {
@@ -43,6 +46,12 @@ export default function BlogPost() {
             github: "https://github.com/Jaun-van-Deventer",
         });
     }, [setMenuTitle, setMenuItems, setMenuSocial]);
+
+    usePageMeta('Projects');  
+    usePageMeta('About Me');      
+    usePageMeta('Certificates');  
+    usePageMeta('Blog');          
+    usePageMeta(); 
 
     return (
         <>
@@ -348,6 +357,8 @@ export default function BlogPost() {
 
                             <div className="bpost-meta">
                                 <span className="bpost-date">{post.date}</span>
+                                <span style={{ color: 'var(--text-muted)', margin: '0 8px' }}>·</span>
+                                <span style={{ color: 'var(--text-muted)', fontSize: '0.75rem' }}>{readingTime}</span>
                             </div>
 
                             <h1 className="bpost-title">{post.title}</h1>
@@ -366,7 +377,7 @@ export default function BlogPost() {
                 )}
 
                 <footer className="bpost-footer">
-                    <p style={{ margin: 0 }}>© 2026 <span>Jaun van Deventer</span>. All rights reserved.</p>
+                    <p style={{ margin: 0 }}>© {new Date().getFullYear()} <span>Jaun van Deventer</span>. All rights reserved.</p>
                     <Link to="/blog" className="bpost-footer-back">← More articles</Link>
                 </footer>
             </div>

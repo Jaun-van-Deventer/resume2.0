@@ -669,7 +669,7 @@ function JaunProfile() {
                 {/* ── Footer ── */}
                 <footer className="jp-footer">
                     <p style={{ margin: 0 }}>
-                        © 2025 <span>Jaun van Deventer</span>. All rights reserved.
+                        © {new Date().getFullYear()} <span>Jaun van Deventer</span>. All rights reserved.
                     </p>
                 </footer>
             </div>
