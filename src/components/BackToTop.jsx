@@ -5,19 +5,16 @@ export default function BackToTop() {
 
     useEffect(() => {
         const onScroll = () => {
-            setVisible(document.documentElement.scrollTop > 400);
+            setVisible(window.scrollY > 400);
         };
         window.addEventListener('scroll', onScroll, { passive: true });
-        document.addEventListener('scroll', onScroll, { passive: true });
         return () => {
             window.removeEventListener('scroll', onScroll);
-            document.removeEventListener('scroll', onScroll);
         };
     }, []);
 
     const scrollUp = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        document.documentElement.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     return (
