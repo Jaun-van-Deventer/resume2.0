@@ -65,11 +65,7 @@ export default function BlogPage() {
             p.excerpt?.toLowerCase().includes(search.toLowerCase())
     );
 
-    usePageMeta('Projects');  
-    usePageMeta('About Me');      
-    usePageMeta('Certificates');  
-    usePageMeta('Blog');          
-    usePageMeta(); 
+    usePageMeta('Blog');
 
     return (
         <>
