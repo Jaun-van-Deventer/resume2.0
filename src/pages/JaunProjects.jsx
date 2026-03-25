@@ -52,11 +52,7 @@ function JaunProjects() {
         touchStartX.current = null;
     };
 
-    usePageMeta('Projects');  
-    usePageMeta('About Me');      
-    usePageMeta('Certificates');  
-    usePageMeta('Blog');          
-    usePageMeta(); 
+    usePageMeta('Projects');
 
     return (
         <>
