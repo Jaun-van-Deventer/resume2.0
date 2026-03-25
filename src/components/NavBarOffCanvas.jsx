@@ -16,8 +16,6 @@ function NavbarOffCanvas() {
     return (
         <>
             <style>{`
-                @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600&display=swap');
-
                 .nav-root {
                     position: fixed;
                     top: 0;
