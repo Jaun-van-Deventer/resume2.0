@@ -7,7 +7,12 @@ import {
     FaCss3Alt, FaHtml5, FaPhp, FaCode, FaDocker, FaRust,
     FaPhone, FaEnvelope, FaGlobe, FaLocationArrow
 } from "react-icons/fa";
-import { SiGo, SiCplusplus, SiPostman, SiMongodb, SiMysql, SiC } from "react-icons/si";
+import {
+    SiGo, SiCplusplus, SiPostman, SiMongodb, SiMysql, SiC,
+    SiAmazonwebservices, SiRender, SiVercel, SiApachespark, SiJupyter,
+    SiSqlite, SiPostgresql, SiNextdotjs, SiDjango, SiGithubactions,
+    SiGithubpages, SiVite
+} from "react-icons/si";
 
 const skills = [
     { icon: <FaJs />, label: "JavaScript" },
@@ -23,14 +28,26 @@ const skills = [
     { icon: <SiMysql />, label: "SQL" },
     { icon: <SiMongodb />, label: "MongoDB" },
     { icon: <SiC />, label: "C" },
+    { icon: <FaDocker />, label: "Docker" },
+    { icon: <SiPostman />, label: "Postman" },
+    { icon: <SiAmazonwebservices />, label: "AWS" },
+    { icon: <SiRender />, label: "Render" },
+    { icon: <SiVercel />, label: "Vercel" },
+    { icon: <SiApachespark />, label: "PySpark" },
+    { icon: <SiJupyter />, label: "Jupyter" },
+    { icon: <SiSqlite />, label: "SQLite" },
+    { icon: <SiPostgresql />, label: "PostgreSQL" },
+    { icon: <SiNextdotjs />, label: "Next.js" },
+    { icon: <SiDjango />, label: "Django" },
+    { icon: <SiGithubactions />, label: "GH Actions" },
+    { icon: <SiGithubpages />, label: "GH Pages" },
+    { icon: <SiVite />, label: "Vite" },
 ];
 
 const learning = [
-    { icon: <FaDocker />, label: "Docker" },
     { icon: <SiCplusplus />, label: "C++" },
     { icon: <SiGo />, label: "GoLang" },
     { icon: <FaRust />, label: "Rust" },
-    { icon: <SiPostman />, label: "Postman" },
 ];
 
 const contact = [

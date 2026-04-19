@@ -600,15 +600,15 @@ function JaunProfile() {
                         </p>
                         <div className="jp-stats">
                             <div className="jp-stat-item">
-                                <div className="jp-stat-number">2+</div>
+                                <div className="jp-stat-number">3+</div>
                                 <div className="jp-stat-label">Years Coding</div>
                             </div>
                             <div className="jp-stat-item">
-                                <div className="jp-stat-number">6+</div>
+                                <div className="jp-stat-number">15+</div>
                                 <div className="jp-stat-label">Projects Built</div>
                             </div>
                             <div className="jp-stat-item">
-                                <div className="jp-stat-number">13+</div>
+                                <div className="jp-stat-number">25+</div>
                                 <div className="jp-stat-label">Technologies</div>
                             </div>
                         </div>
