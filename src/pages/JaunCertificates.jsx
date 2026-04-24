@@ -43,12 +43,7 @@ function JaunCertificates() {
         });
     }, [setMenuTitle, setMenuItems, setMenuSocial]);
 
-    usePageMeta('Projects');  
-    usePageMeta('About Me');      
-    usePageMeta('Certificates');  
-    usePageMeta('Blog');          
-    usePageMeta(); 
-
+    usePageMeta('Certificates');
 
     return (
         <>
