@@ -12,6 +12,7 @@ import { DarkModeProvider } from './components/DarkModeContext';
 import BlogPage from './pages/BlogPage';
 import BlogPost from './components/BlogPost';
 import NotFound from './pages/NotFound';
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
     return (
@@ -30,6 +31,7 @@ function App() {
                         <Route path="/blog/:id"    element={<BlogPost />} />
                         <Route path="*"            element={<NotFound />} />
                     </Routes>
+                    <Analytics />
                 </Router>
             </MenuProvider>
         </DarkModeProvider>
