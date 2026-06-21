@@ -14,8 +14,8 @@ const projects = [
     { img: quicklink, tag: "Browser Extension", title: "Quicklink-QR", desc: "A Chrome extension that turns any link into a scannable, shareable QR code.", link: "https://github.com/Jaun-van-Deventer/Quicklink-QR" },
     { img: invenManager, tag: "Full-Stack", title: "Inventory Manager", desc: "An inventory management system built with React, Node.js, and MongoDB.", link: "https://inventory-manager-jade-omega.vercel.app/" },
     { img: movieBrowser, tag: "Frontend / API", title: "Movie Browser", desc: "Search for any movie via an external API. React-based with API integration in progress.", link: "https://jaun-van-deventer.github.io/react-movie-database/" },
-    { img: devlog, tag: "Fullstack", title: "Dev Log", desc: "A simple app to keep track of personal development activities.", link: "https://jaun-van-deventer.github.io/guess-my-number/" },
-    { img: cartemplate, tag: "Fullstack", title: "Car Reseller Template", desc: "A responsive template for a car reseller website", link: "https://jaun-van-deventer.github.io/pig-game/" },
+    { img: devlog, tag: "Fullstack", title: "Dev Log", desc: "A simple app to keep track of personal development activities.", link: "https://devlog-7u2g.vercel.app/dashboard" },
+    { img: cartemplate, tag: "Fullstack", title: "Car Reseller Template", desc: "A responsive template for a car reseller website", link: "https://cartemplate-web.vercel.app/" },
 ];
 
 function JaunProjects() {
