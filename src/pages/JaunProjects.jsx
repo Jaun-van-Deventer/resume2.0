@@ -4,18 +4,18 @@ import { DarkModeContext } from "../components/DarkModeContext";
 import resumeGameImage from '/assets/resume-game.png';
 import invenManager from '/assets/inven-man.png';
 import movieBrowser from '/assets/movie-browser.png';
-import guessNum from '/assets/guess-num.png';
-import pigGame from '/assets/pig-game.png';
+import devlog from '/assets/devlog.png';
 import quicklink from '/assets/quicklink.png';
+import cartemplate from '/assets/cartemplate.png';
 import usePageMeta from '../hooks/usePageMeta';
 
 const projects = [
     { img: resumeGameImage, tag: "Game / Frontend", title: "Resume Game", desc: "A gamified way to explore my resume built with Kaboom.js and Vite.", link: "https://jaun-van-deventer.github.io/resume_game/" },
     { img: quicklink, tag: "Browser Extension", title: "Quicklink-QR", desc: "A Chrome extension that turns any link into a scannable, shareable QR code.", link: "https://github.com/Jaun-van-Deventer/Quicklink-QR" },
-    { img: invenManager, tag: "Full-Stack", title: "Inventory Manager", desc: "An inventory management system built with React, Node.js, and MongoDB.", link: "#" },
+    { img: invenManager, tag: "Full-Stack", title: "Inventory Manager", desc: "An inventory management system built with React, Node.js, and MongoDB.", link: "https://inventory-manager-jade-omega.vercel.app/" },
     { img: movieBrowser, tag: "Frontend / API", title: "Movie Browser", desc: "Search for any movie via an external API. React-based with API integration in progress.", link: "https://jaun-van-deventer.github.io/react-movie-database/" },
-    { img: guessNum, tag: "Vanilla JS", title: "Guess My Number", desc: "A simple guess-the-number game using vanilla JavaScript, HTML, and CSS.", link: "https://jaun-van-deventer.github.io/guess-my-number/" },
-    { img: pigGame, tag: "Vanilla JS", title: "Pig Game", desc: "First to 100 wins — but rolling a 1 wipes your current score. Press Hold to bank your points.", link: "https://jaun-van-deventer.github.io/pig-game/" },
+    { img: devlog, tag: "Fullstack", title: "Dev Log", desc: "A simple app to keep track of personal development activities.", link: "https://jaun-van-deventer.github.io/guess-my-number/" },
+    { img: cartemplate, tag: "Fullstack", title: "Car Reseller Template", desc: "A responsive template for a car reseller website", link: "https://jaun-van-deventer.github.io/pig-game/" },
 ];
 
 function JaunProjects() {
