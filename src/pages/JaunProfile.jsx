@@ -8,7 +8,7 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import jaunImage from "/assets/jaun.jpg";
+import jaunImage from "/assets/jaun.png";
 
 function JaunProfile() {
     const { setMenuTitle, setMenuItems, setMenuSocial } = useMenu();
@@ -217,7 +217,7 @@ function JaunProfile() {
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
-                    object-position: top center;
+                    object-position: center top;
                     filter: grayscale(20%);
                     transition: filter 0.4s ease;
                 }

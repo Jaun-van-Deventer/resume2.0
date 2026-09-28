@@ -8,6 +8,6 @@ const __dirname = path.dirname(__filename);
 import('./copy-files.js');
 
 const cnamePath = path.join(__dirname, 'dist', 'CNAME');
-fs.writeFileSync(cnamePath, 'www.goresume.co.za');
+fs.writeFileSync(cnamePath, 'www.jaunvd.com');
 
 console.log('Post-build tasks completed!');
